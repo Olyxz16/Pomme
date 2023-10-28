@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { get } from '$lib/db';
+import { getSingle, getSeason, getEpisode } from '$lib/db';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ url }) {
@@ -12,8 +12,12 @@ export async function load({ url }) {
         throw error(404);
     }
 
-    const data = await get(title, season, ep);
+    if(season === undefined && ep === undefined) {
+        return await getSingle(title);
+    }
+    if(season === undefined) {
+        return await getSeason(title, season);
+    }
+    return await getEpisode(title, season, ep);
 
-    return data;
-    
 }
