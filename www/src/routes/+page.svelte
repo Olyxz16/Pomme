@@ -16,13 +16,6 @@
 
 <style>
 
-    :global(body) {
-        background-color: rgb(82, 76, 146);
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
     #title {
         position: absolute;
         top: 5%;
