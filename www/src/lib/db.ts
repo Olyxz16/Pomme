@@ -19,6 +19,18 @@ export async function setSafe(title: string, season: number, ep: number) {
       timestamps: null
     });
 }
+export async function setUnsafe(title: string, season: number, ep: number, timestamp: number) {
+  const { error } = await supabase
+  .from('pomme')
+  .insert({
+      title: title,
+      season: season,
+      ep: ep,
+      safe: false,
+      timestamps: [timestamp]
+    });
+}
+
 export async function get(title: string, season: number, ep: number) {
   const { data, error } = await supabase
   .from('pomme')
