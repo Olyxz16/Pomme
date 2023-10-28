@@ -7,6 +7,18 @@ const supabase = createClient(
   SUPABASE_ANON_KEY ?? ""
 )
 
+
+export async function setSafe(title: string, season: number, ep: number) {
+  const { error } = await supabase
+  .from('pomme')
+  .insert({
+      title: title,
+      season: season,
+      ep: ep,
+      safe: true,
+      timestamps: null
+    });
+}
 export async function get(title: string, season: number, ep: number) {
   const { data, error } = await supabase
   .from('pomme')
