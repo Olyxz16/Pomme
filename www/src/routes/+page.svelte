@@ -9,11 +9,6 @@
         <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
         <input type="text" id="search-bar"/>
     </div>
-
-    <footer style="bottom: 1%; position: absolute; left:0; width: 100%; margin: 0; overflow: hidden;">
-        <div style="text-align: center;"> Made with 🍑 by <a href="https://github.com/Olyxz16"> Cédric Sazos </a> </div>
-    </footer>
-
 </div>
 
 
