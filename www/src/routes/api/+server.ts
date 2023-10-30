@@ -14,3 +14,8 @@ export async function POST({ request }) : Promise<any> {
 
 	return new Response();
 }
+
+
+export async function GET({ request }) : Promise<any> {
+	
+}

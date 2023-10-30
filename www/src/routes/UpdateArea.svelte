@@ -33,7 +33,7 @@
 
 
     async function Update() {
-        fetch("/update", {
+        fetch("/api", {
             method: "POST",
             body: JSON.stringify({
                 title: title,
