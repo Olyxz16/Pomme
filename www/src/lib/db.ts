@@ -31,6 +31,24 @@ export async function setUnsafe(title: string, season: number, ep: number, times
     });
 }
 
+async function getTimestamps(title: string, season: number, ep: number): Promise<any> {
+  const { data, error } = await supabase
+  .from('pomme')
+  .select('timestamps')
+  .eq('title', title)
+  .eq('season', season)
+  .eq('ep', ep);
+  if(data === undefined || data === null || data.length === 0) {
+    return [];
+  }
+  return {
+    timestamps: data[0].timestamps
+  };
+} 
+
+
+
+
 
 export async function getSingle(title: string) {
   const { data, error } = await supabase
