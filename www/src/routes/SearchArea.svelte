@@ -1,17 +1,32 @@
+<script>
 
+    /**
+     * @type {string}
+     */
+    export let title;
+    /**
+     * @type {number}
+     */
+    export let season;
+    /**
+     * @type {number}
+     */
+    export let ep;
+
+</script>
 
 
 <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
 <form method="GET" action="/search">
     <div id="search-bar-div">
-        <input type="text" id="search-bar" name="title"/>
+        <input type="text" id="search-bar" name="title" bind:value={title}/>
         <input type="submit" value="Vérifier" id="search-button">
     </div>
     <div id="numbers-div">
         <label for="season"> Saison </label>
-        <input type="number" name="season"/>
+        <input type="number" name="season" bind:value={season}/>
         <label for="episode"> Episode </label>
-        <input type="number" name="episode"/>
+        <input type="number" name="episode" bind:value={ep}/>
     </div>
 </form>
 

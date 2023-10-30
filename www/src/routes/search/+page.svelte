@@ -3,7 +3,7 @@
   import Episode from './Episode.svelte';
 
     /** @type {import('./$types').PageData} */
-    export let data;
+  export let data;
 
 </script>
 

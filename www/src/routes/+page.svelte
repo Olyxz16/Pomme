@@ -1,6 +1,20 @@
 <script>
+  
   import SearchArea from "./SearchArea.svelte";
   import UpdateArea from "./UpdateArea.svelte";
+
+  /**
+   * @type {string}
+   */
+  let title;
+  /**
+   * @type {number}
+   */
+  let season;
+  /**
+   * @type {number}
+   */
+  let ep;
 
 </script>
 
@@ -8,9 +22,9 @@
     <h1 id="title"> Pomme </h1>
     
     <div id="search">
-        <SearchArea />
+        <SearchArea bind:title={title} bind:season={season} bind:ep={ep}/>
         <hr>
-        <UpdateArea />
+        <UpdateArea bind:title={title} bind:season={season} bind:ep={ep}/>
     </div>
 </div>
 
