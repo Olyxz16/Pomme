@@ -36,8 +36,11 @@ export async function setUnsafe(title: string, season: number, ep: number, times
 
 
   if(timestamps === undefined || timestamps === null) {
-    timestamps = [];
+    insert(title, season, ep, timestamp);
   }
+
+
+
   if(timestamps.length == 0) {
     timestamps.push(timestamp);
   } else {
@@ -49,18 +52,34 @@ export async function setUnsafe(title: string, season: number, ep: number, times
     timestamps.push(timestamp);
   }
   
-  const { error } = await supabase
-  .from('pomme')
-  .insert({
+  await update(title, season, ep, timestamps);
+
+  return {status: 'success'};
+
+}
+
+
+async function insert(title: string, season: number, ep: number, timestamp: number) {
+  supabase
+    .from('pomme')
+    .insert({
       title: title,
       season: season,
       ep: ep,
       safe: false,
-      timestamps: timestamps
+      timestamps: [timestamp]
     });
-
-    return {status: 'success'};
-
+}
+async function update(title: string, season: number, ep: number, timestamps: number[]) {
+  await supabase
+  .from('pomme')
+  .update({
+      safe: false,
+      timestamps: timestamps
+    })
+  .eq('title', title)
+  .eq('season', season)
+  .eq('ep', ep);
 }
 
 async function getTimestamps(title: string, season: number, ep: number): Promise<any> {
