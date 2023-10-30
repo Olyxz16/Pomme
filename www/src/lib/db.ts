@@ -35,32 +35,29 @@ export async function setUnsafe(title: string, season: number, ep: number, times
 export async function getSingle(title: string) {
   const { data, error } = await supabase
   .from('pomme')
-  .select('safe, timestamps')
+  .select('title, season, ep, safe, timestamps')
   .eq('title', title)
 
-  if(error || data === undefined || data.length === 0) {
-    return {};
+  if(error) {
+    throw error;
+  }
+
+  if(data === undefined || data.length === 0) {
+    return {
+      type: "single",
+      title: title,
+      season: 0,
+      episode: 0,
+      safe: false,
+      timestamps: []
+    }
   }
 
   return {
     type: "single",
-    safe: data[0].safe,
-    timestamps: data[0].timestamps
-  }
-}
-export async function getSeason(title: string, season: number) {
-  const { data, error } = await supabase
-  .from('pomme')
-  .select('safe, timestamps')
-  .eq('title', title)
-  .eq('season', season)
-
-  if(error || data === undefined || data.length === 0) {
-    return {};
-  }
-
-  return {
-    type: "season",
+    title: title,
+    season: 0,
+    episode: 0,
     safe: data[0].safe,
     timestamps: data[0].timestamps
   }
@@ -68,17 +65,30 @@ export async function getSeason(title: string, season: number) {
 export async function getEpisode(title: string, season: number, ep: number) {
   const { data, error } = await supabase
   .from('pomme')
-  .select('safe, timestamps')
+  .select('title, season, ep, safe, timestamps')
   .eq('title', title)
   .eq('season', season)
-  .eq('season', ep);
+  .eq('ep', ep);
 
-  if(error || data === undefined || data.length === 0) {
-    return {};
+  if(error) {
+    throw error;
+  }
+  if(data === undefined || data.length === 0) {
+    return {
+      type: "episode",
+      title: title,
+      season: season,
+      episode: ep,
+      safe: false,
+      timestamps: [],
+    }
   }
 
   return {
     type: "episode",
+    title: title,
+    season: season,
+    episode: ep,
     safe: data[0].safe,
     timestamps: data[0].timestamps
   }
