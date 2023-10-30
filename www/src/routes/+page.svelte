@@ -9,6 +9,12 @@
                 <input type="text" id="search-bar" name="title"/>
                 <input type="submit" id="search-button">
             </div>
+            <div id="numbers-div">
+                <label for="season"> Saison </label>
+                <input type="number" name="season"/>
+                <label for="episode"> Episode </label>
+                <input type="number" name="episode"/>
+            </div>
         </form>
     </div>
 </div>
@@ -58,6 +64,11 @@
         min-height: 50px;
         border-radius: 25px;
         margin-left: 10px;
+    }
+
+
+    #numbers-div {
+        margin-top: 30px;
     }
 
 
