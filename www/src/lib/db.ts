@@ -13,7 +13,7 @@ export async function setSafe(title: string, season: number, ep: number) {
   
   const { timestamps } = await getTimestamps(title, season, ep);
 
-  if(timestamps.length !== 0) {
+  if(timestamps !== undefined && timestamps !== null && timestamps.length !== 0) {
     return {status: 'error'};
   }
 
