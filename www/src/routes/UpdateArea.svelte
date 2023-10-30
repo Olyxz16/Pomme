@@ -67,8 +67,6 @@
         <button on:click={Update}> update </button>
     </div>
 
-    
-
 </div>
 
 
@@ -77,7 +75,7 @@
 
 <style> 
 
-    input {
+    input[type="number"] {
         width: 10%;
     }
 
