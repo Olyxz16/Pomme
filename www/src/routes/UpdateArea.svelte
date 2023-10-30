@@ -26,6 +26,11 @@
      * @type {number}
      */
     let second;
+    /**
+     * @type {boolean}
+     */
+    let safe;
+
 
     async function Update() {
         fetch("/update", {
@@ -36,7 +41,8 @@
                 ep: ep,
                 hour: hour,
                 minute: minute,
-                second: second
+                second: second,
+                safe: safe
             })
         });
     }
@@ -50,6 +56,8 @@
     <h3> Remplissez ces champs pour ajouter un avertissement </h3>
 
     <div id="time-div">
+        <label for="hour"> Safe ? </label>
+        <input type="checkbox" name="safe" bind:checked={safe}>
         <label for="hour"> H: </label>
         <input type="number" name="hour" bind:value={hour}>
         <label for="minute"> M: </label>
