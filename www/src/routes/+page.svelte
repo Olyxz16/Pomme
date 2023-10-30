@@ -1,5 +1,6 @@
 <script>
   import SearchArea from "./SearchArea.svelte";
+  import UpdateArea from "./UpdateArea.svelte";
 
 </script>
 
@@ -9,6 +10,7 @@
     <div id="search">
         <SearchArea />
         <hr>
+        <UpdateArea />
     </div>
 </div>
 
