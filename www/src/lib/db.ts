@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
-
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from '$env/static/private';
+
+const MIN_TIME_DIFF = 10; // seconds
 
 const supabase = createClient(
   SUPABASE_URL ?? "",
@@ -9,6 +10,13 @@ const supabase = createClient(
 
 
 export async function setSafe(title: string, season: number, ep: number) {
+  
+  const { timestamps } = await getTimestamps(title, season, ep);
+
+  if(timestamps.length !== 0) {
+    return {status: 'error'};
+  }
+
   const { error } = await supabase
   .from('pomme')
   .insert({
@@ -16,10 +24,27 @@ export async function setSafe(title: string, season: number, ep: number) {
       season: season,
       ep: ep,
       safe: true,
-      timestamps: null
+      timestamps: []
     });
+
+  return {status: 'success'};
+
 }
 export async function setUnsafe(title: string, season: number, ep: number, timestamp: number) {
+  
+  const { timestamps } = await getTimestamps(title, season, ep);
+
+  if(timestamps.length == 0) {
+    timestamps.push();
+  } else {
+    for(let ts of timestamps) {
+      if(Math.abs(timestamp - ts) < MIN_TIME_DIFF) {
+        return {status: "success"};
+      }
+    }
+    timestamps.push(timestamp);
+  }
+  
   const { error } = await supabase
   .from('pomme')
   .insert({
@@ -27,8 +52,9 @@ export async function setUnsafe(title: string, season: number, ep: number, times
       season: season,
       ep: ep,
       safe: false,
-      timestamps: [timestamp]
+      timestamps: timestamps
     });
+
 }
 
 async function getTimestamps(title: string, season: number, ep: number): Promise<any> {
