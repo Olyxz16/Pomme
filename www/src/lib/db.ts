@@ -32,10 +32,14 @@ export async function setSafe(title: string, season: number, ep: number) {
 }
 export async function setUnsafe(title: string, season: number, ep: number, timestamp: number) {
   
-  const { timestamps } = await getTimestamps(title, season, ep);
+  let { timestamps } = await getTimestamps(title, season, ep);
 
+
+  if(timestamps === undefined || timestamps === null) {
+    timestamps = [];
+  }
   if(timestamps.length == 0) {
-    timestamps.push();
+    timestamps.push(timestamp);
   } else {
     for(let ts of timestamps) {
       if(Math.abs(timestamp - ts) < MIN_TIME_DIFF) {
@@ -54,6 +58,8 @@ export async function setUnsafe(title: string, season: number, ep: number, times
       safe: false,
       timestamps: timestamps
     });
+
+    return {status: 'success'};
 
 }
 
