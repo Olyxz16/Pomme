@@ -59,11 +59,11 @@
         <label for="hour"> Safe ? </label>
         <input type="checkbox" name="safe" bind:checked={safe}>
         <label for="hour"> H: </label>
-        <input type="number" name="hour" bind:value={hour}>
+        <input type="number" name="hour" bind:value={hour} disabled={safe}>
         <label for="minute"> M: </label>
-        <input type="number" name="minute" bind:value={minute}>
+        <input type="number" name="minute" bind:value={minute} disabled={safe}>
         <label for="second"> S: </label>
-        <input type="number" name="second" bind:value={second}>
+        <input type="number" name="second" bind:value={second} disabled={safe}>
         <button on:click={Update}> update </button>
     </div>
 
