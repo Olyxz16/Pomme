@@ -116,7 +116,7 @@ export async function getSingle(title: string) {
       type: "single",
       title: title,
       season: 0,
-      episode: 0,
+      ep: 0,
       safe: false,
       timestamps: []
     }
@@ -126,7 +126,7 @@ export async function getSingle(title: string) {
     type: "single",
     title: title,
     season: 0,
-    episode: 0,
+    ep: 0,
     safe: data[0].safe,
     timestamps: data[0].timestamps
   }
@@ -147,7 +147,7 @@ export async function getEpisode(title: string, season: number, ep: number) {
       type: "episode",
       title: title,
       season: season,
-      episode: ep,
+      ep: ep,
       safe: false,
       timestamps: [],
     }
@@ -157,7 +157,7 @@ export async function getEpisode(title: string, season: number, ep: number) {
     type: "episode",
     title: title,
     season: season,
-    episode: ep,
+    ep: ep,
     safe: data[0].safe,
     timestamps: data[0].timestamps
   }

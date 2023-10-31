@@ -16,7 +16,7 @@
     /**
      * @type {number}
      */
-    export let episode;
+    export let ep;
     /**
      * @type {boolean}
      */
@@ -37,7 +37,7 @@
 <div>
 
     <h1> {title} </h1>
-    <h2> S:{season} E:{episode} </h2>
+    <h2> S:{season} E:{ep} </h2>
     
     {#if safe}
         <p> Is Safe ! </p>

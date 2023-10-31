@@ -25,8 +25,8 @@
     <div id="numbers-div">
         <label for="season"> Saison </label>
         <input type="number" name="season" bind:value={season}/>
-        <label for="episode"> Episode </label>
-        <input type="number" name="episode" bind:value={ep}/>
+        <label for="ep"> Episode </label>
+        <input type="number" name="ep" bind:value={ep}/>
     </div>
 </form>
 

@@ -13,7 +13,7 @@
     <Episode 
         title={data.title ?? ""}
         season={data.season}
-        episode={data.episode}
+        ep={data.ep}
         safe={data.safe}
         timestamps={data.timestamps} />
 </div>
