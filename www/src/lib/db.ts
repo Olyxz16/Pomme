@@ -37,8 +37,8 @@ export async function setUnsafe(title: string, season: number, ep: number, times
 
   if(timestamps === undefined || timestamps === null) {
     insert(title, season, ep, timestamp);
+    return {status: 'success'}
   }
-
 
 
   if(timestamps.length == 0) {
