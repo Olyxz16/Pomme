@@ -17,19 +17,19 @@
     /**
      * @type {number}
      */
-    let hour;
+    let hour = 0;
     /**
      * @type {number}
      */
-    let minute;
+    let minute = 0;
     /**
      * @type {number}
      */
-    let second;
+    let second = 0;
     /**
      * @type {boolean}
      */
-    let safe;
+    let safe = false;
 
 
     async function Update() {
