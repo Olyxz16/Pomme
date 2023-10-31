@@ -13,13 +13,32 @@
      */
     export let ep;
 
+    /**
+     * @type {string[]}
+     */
+    let datalist = [];
+
+
+    async function updateDatalist() {
+        const url = '/api/movies?'+ new URLSearchParams([
+            ['title', title]
+        ]);
+        const data = await fetch(url);
+        datalist = await data.json();
+    }   
+
 </script>
 
 
 <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
-<form method="GET" action="/search">
+<form method="GET" action="/search" autocomplete="off">
     <div id="search-bar-div">
-        <input type="text" id="search-bar" name="title" bind:value={title}/>
+        <input type="text" id="search-bar" name="title" list="title-list" bind:value={title} on:input={updateDatalist}/>
+        <datalist id="title-list">
+            {#each datalist as data}
+                <option value={data}></option>
+            {/each}
+        </datalist>
         <input type="submit" value="Vérifier" id="search-button">
     </div>
     <div id="numbers-div">
