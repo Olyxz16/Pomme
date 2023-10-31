@@ -6,15 +6,15 @@
   /**
    * @type {string}
    */
-  let title;
+  let title = '';
   /**
    * @type {number}
    */
-  let season;
+  let season = 0;
   /**
    * @type {number}
    */
-  let ep;
+  let ep = 0;
 
 </script>
 
