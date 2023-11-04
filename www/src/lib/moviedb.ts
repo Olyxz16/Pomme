@@ -2,7 +2,7 @@ import { MOVIEDB_API_KEY } from '$env/static/private';
 
 const MAX_QUERY_COUNT = 5;
 
-export async function query(title: string) {
+export async function query(title: string): Promise<string[]> {
     const url = `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=fr-FR&page=1`;
     const options = {method: 'GET', headers: {
         accept: 'application/json',
