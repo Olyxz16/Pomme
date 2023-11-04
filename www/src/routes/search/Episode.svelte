@@ -34,15 +34,18 @@
 
 
 
-<div>
+<div id="search">
 
     <h1> {title} </h1>
-    <h2> S:{season} E:{ep} </h2>
+    <h2> 
+        {season != 0 ? "S:"+season : ""} 
+        {ep != 0 ? "E:"+ep : ""}
+    </h2>
     
     {#if safe}
         <p> Is Safe ! </p>
     {:else if undetermined}
-        <p> Undetermined </p>
+        <p> No data </p>
     {:else}
         <p> Is Unsafe ! </p>
         {#each times as {hour, minute, second}}
@@ -51,3 +54,16 @@
     {/if}
 
 </div>
+
+
+<style>
+
+    #search {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        -webkit-transform: translate(-50%, -40%);
+    }
+
+</style>
