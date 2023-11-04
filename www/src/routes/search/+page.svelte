@@ -9,6 +9,9 @@
 
 
 
+<svelte:head> 
+    <title>{data.title ?? ""}</title>
+</svelte:head>
 <div> 
     <Episode 
         title={data.title ?? ""}

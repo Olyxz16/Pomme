@@ -18,6 +18,9 @@
 
 </script>
 
+<svelte:head>
+    <title>Pomme</title>
+</svelte:head>
 <div>
     <h1 id="title"> Pomme </h1>
     
