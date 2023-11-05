@@ -1,6 +1,6 @@
-import { getEpisode, getSingle, setSafe, setUnsafe } from '$lib/db';
+import { setSafe, setUnsafe } from '$lib/db';
+import { queryTitle } from '$lib/query.js';
 import { toTimestamp } from '$lib/timestamps';
-import { error } from '@sveltejs/kit';
 
 
 export async function POST({ request }) : Promise<any> {
@@ -19,18 +19,6 @@ export async function POST({ request }) : Promise<any> {
 
 
 export async function GET({ url }) : Promise<any> {
-
-	let title = url.searchParams.get("title");
-    let season = Number.parseInt(url.searchParams.get("season") ?? "0");
-    let ep = Number.parseInt(url.searchParams.get("ep") ?? "0");
-
-	if(title === undefined || title === null) {
-        throw error(404);
-    }
-
-    if(season === undefined && ep === undefined) {
-        return await getSingle(title);
-    }
-    const data = await getEpisode(title, season, ep);
+    const data = queryTitle(url);
 	return new Response(JSON.stringify(data));
 }
