@@ -10,6 +10,13 @@
         display: flex;
         flex-direction: column;
         text-align: center;
+        font-family: WorkSans;
+    }
+    @font-face {
+        font-family: 'WorkSans';
+        font-style: normal;
+        font-weight: 500;
+        src: url('/fonts/WorkSans.ttf');
     }
 
 </style>
