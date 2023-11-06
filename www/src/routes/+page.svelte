@@ -54,6 +54,7 @@
 
     hr {
         margin-top: 50px;
+        filter: blur(1.3px);
     }
 
 </style>

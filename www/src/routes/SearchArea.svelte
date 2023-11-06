@@ -43,9 +43,9 @@
     </div>
     <div id="numbers-div">
         <label for="season"> Saison </label>
-        <input type="number" name="season" bind:value={season}/>
+        <input id="season" type="number" name="season" bind:value={season}/>
         <label for="ep"> Episode </label>
-        <input type="number" name="ep" bind:value={ep}/>
+        <input id="episode" type="number" name="ep" bind:value={ep}/>
     </div>
 </form>
 
@@ -66,7 +66,7 @@
     #search-bar {
         width: 130%;
         font-size: 2em;
-        border-radius: 25px;
+        padding-left: 10px;
     }
 
     #search-button {
@@ -74,8 +74,22 @@
         min-width: 50px;
         height: 50px;
         min-height: 50px;
-        border-radius: 25px;
+        border-radius: 5px;
         margin-left: 10px;
+    }
+
+
+    #search-bar, #season, #episode {
+        border-radius: 5px;
+        border-color: #00000000;
+        background-color: rgb(220, 221, 223);
+        box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
+    }
+    #search-button {
+        border-radius: 5px;
+        border-color: #00000000;
+        background-color: rgb(220, 221, 223);
+        box-shadow: 3px 3px 3px 1px rgba(120, 120, 120, 0.2);
     }
 
 

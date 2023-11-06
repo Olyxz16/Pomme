@@ -6,10 +6,13 @@
 <style> 
 
     :global(body) {
-        background-color: rgb(108, 101, 184);
+        background-image: url(/background.svg);
+        background-size: cover;
+
         display: flex;
         flex-direction: column;
         text-align: center;
+
         font-family: WorkSans;
     }
     @font-face {
@@ -17,6 +20,10 @@
         font-style: normal;
         font-weight: 500;
         src: url('/fonts/WorkSans.ttf');
+    }
+
+    a:visited {
+        color: rgb(0,0,0,1);
     }
 
 </style>
