@@ -60,7 +60,7 @@ export async function setUnsafe(title: string, season: number, ep: number, times
 
 
 async function insert(title: string, season: number, ep: number, timestamp: number) {
-  supabase
+  await supabase
     .from('pomme')
     .insert({
       title: title,
