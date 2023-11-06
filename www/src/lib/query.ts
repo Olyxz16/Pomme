@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { query } from "./moviedb";
-import { getEpisode, getSingle } from "./db";
+import { getEpisode } from "./db";
 
 export async function queryTitle(url: URL) {
 
@@ -12,14 +12,23 @@ export async function queryTitle(url: URL) {
         throw error(404);
     }
 
-    const values = await query(title);
-    if(!values.includes(title)) {
-        throw error(404);
+    const relatedTitles = await query(title);
+
+    let isUrl = isURL(title);
+    let doesTitleExist = relatedTitles.includes(title);
+
+    if(isUrl || doesTitleExist) {
+        getEpisode(title, season, ep);
     }
 
-    if(season === undefined && ep === undefined) {
-        return await getSingle(title);
-    }
+
     return await getEpisode(title, season, ep);
 
+}
+
+
+
+function isURL(str: string): boolean {
+    var regex = new RegExp("^https?://");
+    return regex.test(str);
 }
