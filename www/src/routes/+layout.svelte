@@ -7,7 +7,8 @@
 
     :global(body) {
         background-image: url(/background.svg);
-        background-size: cover;
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
 
         display: flex;
         flex-direction: column;
