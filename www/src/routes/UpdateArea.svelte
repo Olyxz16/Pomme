@@ -84,6 +84,10 @@
     input[type="number"] {
         width: 10%;
     }
+    input:focus {
+        border-color: rgb(1,1,0, 0.2);
+        outline: 3px solid rgba(255, 255, 0, 0.5);
+    }
 
     button {
         border-radius: 5px;

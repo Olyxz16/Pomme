@@ -81,15 +81,20 @@
 
     #search-bar, #season, #episode {
         border-radius: 5px;
-        border-color: #00000000;
+        border-color: rgb(0,0,0,0);
         background-color: rgb(220, 221, 223, 0.5);
         box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
     }
     #search-button {
         border-radius: 5px;
-        border-color: #00000000;
+        border-color: rgb(0,0,0,0);
         background-color: rgb(220, 221, 223, 0.5);
         box-shadow: 3px 3px 3px 1px rgba(120, 120, 120, 0.2);
+    }
+
+    input:focus {
+        border-color: rgb(1,1,0, 0.2);
+        outline: 3px solid rgba(255, 255, 0, 0.5);
     }
 
 
