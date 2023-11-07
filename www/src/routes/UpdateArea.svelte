@@ -78,7 +78,7 @@
     input {
         border-radius: 5px;
         border-color: #00000000;
-        background-color: rgb(220, 221, 223);
+        background-color: rgb(220, 221, 223, 0.5);
         box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
     }
     input[type="number"] {
@@ -88,7 +88,7 @@
     button {
         border-radius: 5px;
         border-color: #00000000;
-        background-color: rgb(220, 221, 223);
+        background-color: rgb(220, 221, 223, 0.5);
         box-shadow: 3px 3px 3px 1px rgba(120, 120, 120, 0.2);
     }
 
