@@ -4,27 +4,31 @@
 
     import { fromTimestamp } from "$lib/timestamps";
 
+    /** @type {import('./$types').PageData} */
+    export let data;
+
     /**
      * @type {string}
      */
-     export let title;
+    $: title = data.title;
 
     /**
      * @type {number}
      */
-    export let season;
+    $: season = data.season;
     /**
      * @type {number}
      */
-    export let ep;
+    $: ep = data.ep;
     /**
      * @type {boolean}
      */
-    export let safe;
+    $: safe = data.safe;
+
     /**
      * @type {Array<number>}
      */
-    export let timestamps;
+    $: timestamps = data.timestamps;
 
     $: times = timestamps.map(val => fromTimestamp(val));
     $: undetermined = !safe && timestamps.length == 0;
@@ -38,8 +42,8 @@
 
     <h1> {title} </h1>
     <h2> 
-        {season != 0 ? "S:"+season : ""} 
-        {ep != 0 ? "E:"+ep : ""}
+        {season != 0 ? "Saison "+season : ""} 
+        {ep != 0 ? "Episode "+ep : ""}
     </h2>
     
     {#if safe}

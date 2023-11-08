@@ -9,14 +9,9 @@
 
 
 
-<svelte:head> 
+<svelte:head>
     <title>{data.title ?? ""}</title>
 </svelte:head>
 <div> 
-    <Episode 
-        title={data.title ?? ""}
-        season={data.season}
-        ep={data.ep}
-        safe={data.safe}
-        timestamps={data.timestamps} />
+    <Episode data={data} />
 </div>
