@@ -17,7 +17,7 @@
     <div id="update">
       <UpdateArea title={data.title} season={data.season} ep={data.ep}/>
     </div>
-    <div id="episode">
+    <div id="media">
       <MediaResult data={data} />
     </div>
 </div>
@@ -32,7 +32,7 @@
     transform: translate(-50%, -15%);
     -webkit-transform: translateY(-50%, -15%);
   }
-  #episode {
+  #media {
     position: absolute;
     top: 40%;
     left: 50%;
