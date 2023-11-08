@@ -13,5 +13,18 @@
     <title>{data.title ?? ""}</title>
 </svelte:head>
 <div> 
-    <Episode data={data} />
+    <div id="episode">
+      <Episode data={data} />
+    </div>
 </div>
+<style>
+
+  #episode {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    -webkit-transform: translate(-50%, -40%);
+  }
+
+</style>

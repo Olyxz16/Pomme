@@ -58,16 +58,3 @@
     {/if}
 
 </div>
-
-
-<style>
-
-    #search {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -40%);
-        -webkit-transform: translate(-50%, -40%);
-    }
-
-</style>
