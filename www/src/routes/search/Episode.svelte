@@ -47,13 +47,14 @@
     </h2>
     
     {#if safe}
-        <p> Is Safe ! </p>
+        <p> Est safe ! </p>
     {:else if undetermined}
-        <p> No data </p>
+        <p> Pas de données. </p>
     {:else}
-        <p> Is Unsafe ! </p>
+        <p> N'est pas safe ! </p>
+        <p> Aux time codes : </p>
         {#each times as {hour, minute, second}}
-            <p> At : {hour}h{minute}m{second}s </p>
+            <p> {hour}h{minute}m{second}s </p>
         {/each}
     {/if}
 
