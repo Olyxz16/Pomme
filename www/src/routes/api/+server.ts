@@ -19,6 +19,6 @@ export async function POST({ request }) : Promise<any> {
 
 
 export async function GET({ url }) : Promise<any> {
-    const data = queryTitle(url);
+    const data = await queryTitle(url);
 	return new Response(JSON.stringify(data));
 }
