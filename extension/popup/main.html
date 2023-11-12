@@ -7,8 +7,45 @@
         <title>Pomme</title>
     </head>
     <body>
+
+
+        <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
+        <form method="GET" action="/search" autocomplete="off">
+            <div id="search-bar-div">
+                <input type="text" id="search-bar" name="title" list="title-list" bind:value={title} on:input={updateDatalist}/>
+                <datalist id="title-list">
+                    <!-- Replace data list-->
+                </datalist>
+                <input type="submit" value="Vérifier" id="search-button">
+            </div>
+            <div id="numbers-div">
+                <label for="season"> Saison </label>
+                <input id="season" type="number" name="season" bind:value={season}/>
+                <label for="ep"> Episode </label>
+                <input id="episode" type="number" name="ep" bind:value={ep}/>
+            </div>
+        </form>
+
+
+        <h3> Remplissez ces champs pour ajouter un avertissement </h3>
+        <div id="time-div">
+            <label for="hour"> Safe ? </label>
+            <input type="checkbox" name="safe" bind:checked={safe}>
+            <label for="hour"> H: </label>
+            <input type="number" class="time" name="hour" bind:value={hour} disabled={safe}>
+            <label for="minute"> M: </label>
+            <input type="number" class="time" name="minute" bind:value={minute} disabled={safe}>
+            <label for="second"> S: </label>
+            <input type="number" class="time" name="second" bind:value={second} disabled={safe}>
+            <button on:click={Update}> update </button>
+        </div>
+
+
+        <footer style="bottom: 1%; position: absolute; left:0; width: 100%; margin: 0; overflow: hidden;">
+            <div style="text-align: center;"> Alpha version | Made with 🍑 by <a href="https://github.com/Olyxz16"> Cédric Sazos </a> </div>
+        </footer>
+
+
     </body>
-    <footer style="bottom: 1%; position: absolute; left:0; width: 100%; margin: 0; overflow: hidden;">
-        <div style="text-align: center;"> Alpha version | Made with 🍑 by <a href="https://github.com/Olyxz16"> Cédric Sazos </a> </div>
-    </footer>
+    
 </html>

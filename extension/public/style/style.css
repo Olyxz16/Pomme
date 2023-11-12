@@ -1,5 +1,12 @@
 html {
-    background-color: blue;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 300px;
+    max-height: 300px;
+    font-family: MochiyPopOne;
+    font-size: 0.72em;
+    text-align: center;
+    overflow: hidden;
 }
 
 
@@ -9,4 +16,92 @@ html {
     font-style: normal;
     font-weight: 500;
     src: url('../fonts/MochiyPopOne.ttf');
+}
+
+
+
+
+
+
+
+
+#search-bar-div {
+    position: relative;
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#search-bar {
+    width: 100%;
+    font-size: 1em;
+    padding-left: 10px;
+}
+
+#search-button {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+
+#search-bar, #season, #episode {
+    border-radius: 5px;
+    border-color: rgb(0,0,0,0);
+    background-color: rgb(220, 221, 223, 0.5);
+    box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
+}
+#search-button {
+    border-radius: 5px;
+    border-color: rgb(0,0,0,0);
+    background-color: rgb(220, 221, 223, 0.5);
+    box-shadow: 3px 3px 3px 1px rgba(120, 120, 120, 0.2);
+}
+
+input:focus {
+    border-color: rgb(1,1,0, 0.2);
+    outline: 3px solid rgba(255, 255, 0, 0.5);
+}
+
+
+#numbers-div {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input {
+    border-radius: 5px;
+    border-color: #00000000;
+    background-color: rgb(220, 221, 223, 0.5);
+    box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
+}
+input[type="number"] {
+    width: 10%;
+}
+input:focus {
+    border-color: rgb(1,1,0, 0.2);
+    outline: 3px solid rgba(255, 255, 0, 0.5);
+}
+
+button {
+    border-radius: 5px;
+    border-color: #00000000;
+    background-color: rgb(220, 221, 223, 0.5);
+    box-shadow: 3px 3px 3px 1px rgba(120, 120, 120, 0.2);
 }
