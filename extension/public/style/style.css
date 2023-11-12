@@ -1,0 +1,12 @@
+html {
+    background-color: blue;
+}
+
+
+
+@font-face {
+    font-family: 'MochiyPopOne';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/MochiyPopOne.ttf');
+}
