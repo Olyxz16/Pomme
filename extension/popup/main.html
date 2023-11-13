@@ -10,21 +10,19 @@
 
 
         <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
-        <form method="GET" action="/search" autocomplete="off">
-            <div id="search-bar-div">
-                <input type="text" id="search-bar" name="title" list="title-list" bind:value={title} on:input={updateDatalist}/>
-                <datalist id="title-list">
-                    <!-- Replace data list-->
-                </datalist>
-                <input type="submit" value="Vérifier" id="search-button">
-            </div>
-            <div id="numbers-div">
-                <label for="season"> Saison </label>
-                <input id="season" type="number" name="season" bind:value={season}/>
-                <label for="ep"> Episode </label>
-                <input id="episode" type="number" name="ep" bind:value={ep}/>
-            </div>
-        </form>
+        <div id="search-bar-div">
+            <input type="text" id="search-bar" name="title" list="title-list" hx-get="http://192.168.1.24:5173/api/rest/movies/?title=Attack+on+Titan" hx-trigger="changed" hx-target="#title-list"/>
+            <datalist id="title-list">
+                <!-- Replace data list-->
+            </datalist>
+            <input type="submit" value="Vérifier" id="search-button" hx-get="http://192.168.1.24:5173/api/rest/search/?title=Attack+on+Titan" hx-trigger="click" hx-target="#search-bar-div" hx-swap="innerHTML">
+        </div>
+        <div id="numbers-div">
+            <label for="season"> Saison </label>
+            <input id="season" type="number" name="season" bind:value={season}/>
+            <label for="ep"> Episode </label>
+            <input id="episode" type="number" name="ep" bind:value={ep}/>
+        </div>
 
 
         <h3> Remplissez ces champs pour ajouter un avertissement </h3>
