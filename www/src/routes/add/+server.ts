@@ -1,5 +1,4 @@
 import { setSafe, setUnsafe } from '$lib/db';
-import { queryTitle } from '$lib/query.js';
 import { toTimestamp } from '$lib/timestamps';
 
 
@@ -15,10 +14,4 @@ export async function POST({ request }) : Promise<any> {
 	}
 
 	return new Response();
-}
-
-
-export async function GET({ url }) : Promise<any> {
-    const data = await queryTitle(url);
-	return new Response(JSON.stringify(data));
 }
