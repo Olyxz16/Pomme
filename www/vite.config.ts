@@ -23,18 +23,23 @@ const viteServerConfig = {
 /** @type {import('vite').Plugin} */
 const viteServerConfig2 = {
     server: {
-    middlewareMode: 'html',
-    middleware: [
-        cors({
-            origin: '*',
-            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-            allowedHeaders: ['Content-Type', 'Authorization'],
-        }),
-    ],
+        middlewareMode: 'html',
+        middleware: [
+            cors({
+                origin: '*',
+                methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+                allowedHeaders: ['Content-Type', 'Authorization'],
+            }),
+        ],
     },
 };
 
 
 export default defineConfig({
-	plugins: [sveltekit(), viteServerConfig]
+	plugins: [sveltekit(), viteServerConfig],
+    server: {
+        cors: {
+            preflightContinue: true
+        }
+    }
 });
