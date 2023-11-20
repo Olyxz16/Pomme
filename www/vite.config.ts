@@ -1,5 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import express from 'express';
+import cors from 'cors';
+
+const app = express()
+app.use(cors())
+
 
 /** @type {import('vite').Plugin} */
 const viteServerConfig = {
@@ -12,6 +18,20 @@ const viteServerConfig = {
             next();
         });
     }
+};
+
+/** @type {import('vite').Plugin} */
+const viteServerConfig2 = {
+    server: {
+    middlewareMode: 'html',
+    middleware: [
+        cors({
+            origin: '*',
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+            allowedHeaders: ['Content-Type', 'Authorization'],
+        }),
+    ],
+    },
 };
 
 
