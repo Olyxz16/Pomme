@@ -19,7 +19,7 @@ export const handle: Handle = async ({ resolve, event }) => {
     if(event.request.method === 'OPTIONS') {
       return new Response(null, {
         headers: {
-          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Methods': 'POST, PUT',
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Headers': '*',
         }
