@@ -14,7 +14,6 @@
         <div id="search-bar-div">
             <input type="text" id="search-bar" name="title" list="title-list" hx-get="https://pomme.olyxz16.fr/api/rest/movies" hx-trigger="keydown" hx-target="#title-list" autocomplete="false"/>
             <datalist id="title-list">
-                <!-- Replace data list-->
             </datalist>
             <input type="submit" value="Vérifier" id="search-button" hx-get="https://pomme.olyxz16.fr/api/rest/search" hx-trigger="click" hx-target="#search-bar-div" hx-swap="innerHTML" hx-include="#search-bar"/>
         </div>
