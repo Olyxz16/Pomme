@@ -19,23 +19,18 @@
         </div>
         <div id="numbers-div">
             <label for="season"> Saison </label>
-            <input id="season" class="search-params" type="number" name="season" bind:value={season}/>
+            <input id="season" class="search-params" type="number" name="season"/>
             <label for="ep"> Episode </label>
-            <input id="episode" class="search-params" type="number" name="ep" bind:value={ep}/>
+            <input id="episode" class="search-params" type="number" name="ep"/>
         </div>
 
 
         <h3> Remplissez ces champs pour ajouter un avertissement </h3>
         <div id="time-div">
             <label for="hour"> Safe ? </label>
-            <input type="checkbox" name="safe" bind:checked={safe}>
             <label for="hour"> H: </label>
-            <input type="number" class="time" name="hour" bind:value={hour} disabled={safe}>
             <label for="minute"> M: </label>
-            <input type="number" class="time" name="minute" bind:value={minute} disabled={safe}>
             <label for="second"> S: </label>
-            <input type="number" class="time" name="second" bind:value={second} disabled={safe}>
-            <button on:click={Update}> update </button>
         </div>
 
 
