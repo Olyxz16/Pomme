@@ -16,7 +16,7 @@ export async function GET({ url }) : Promise<any> {
     let result = "";
     let maxInd = Math.min(5, data.length);
     for(let i = 0 ; i < maxInd ; i++) {
-        result += `<option value=${data[i]}></option>` + "\n";
+        result += `<option value="${data[i]}"></option>` + "\n";
     }
     return new Response(result);
 
