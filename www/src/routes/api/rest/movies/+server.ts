@@ -4,8 +4,6 @@ import { query } from '$lib/moviedb';
 
 export async function GET({ url }) : Promise<any> {
 
-    console.log("test");
-
 	let title = url.searchParams.get("title");
 
 	if(title === undefined || title === null) {
