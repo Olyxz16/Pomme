@@ -28,9 +28,14 @@
         <h3> Remplissez ces champs pour ajouter un avertissement </h3>
         <div id="time-div">
             <label for="hour"> Safe ? </label>
+            <input type="checkbox" name="safe" class="update-params">
             <label for="hour"> H: </label>
+            <input type="number" class="time" name="hour" class="update-params">
             <label for="minute"> M: </label>
+            <input type="number" class="time" name="minute" class="update-params">
             <label for="second"> S: </label>
+            <input type="number" class="time" name="second" class="update-params">
+            <button hx-post="https://pomme.olyxz16.fr/add" hx-include=".search-params, .update-params"> update </button>
         </div>
 
 
