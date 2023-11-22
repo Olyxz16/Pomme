@@ -32,7 +32,13 @@ export const handle: Handle = async ({ resolve, event }) => {
     response.headers.append('Access-Control-Allow-Origin', `*`);
   }
   if (event.url.pathname.startsWith('/add')) {
-    response.headers.append('Access-Control-Allow-Origin', `*`);
+    if(event.request.method === 'POST') {
+      response.headers.append('Access-Control-Allow-Methods', 'POST');
+      response.headers.append('Access-Control-Allow-Origin', '*');
+      response.headers.append('Access-Control-Allow-Headers', '*');
+      return response;
+    }
   }
+  
   return response;
 };
