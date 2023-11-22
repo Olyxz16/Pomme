@@ -9,7 +9,6 @@ export async function GET({ url }) : Promise<any> {
     const ep: number = data.ep;
     const safe: boolean = data.safe;
     const timestamps: number[] = data.timestamps;
-    console.log(timestamps);
     let res = `
         <p> ${title} </p>
         <p> ${season} </p>
