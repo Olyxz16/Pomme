@@ -16,7 +16,7 @@ export async function GET({ url }) : Promise<any> {
     `;
     if(safe) {
         res += `<p> Est safe ! </p>`;
-    } else if(timestamps === undefined || timestamps.length === 0) {
+    } else if(timestamps === null || timestamps === undefined || timestamps.length === 0) {
         res += `<p> Pas de données. </p>`;
     } else {
         res += `<p> N'est pas safe ! </p>
