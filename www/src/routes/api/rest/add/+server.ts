@@ -5,15 +5,14 @@ import { toTimestamp } from '$lib/timestamps';
 export async function POST({ request }) : Promise<any> {
 
 	const data = await request.formData();
-    const obj = Object.fromEntries(data.entries());
-	const title: string = obj.title.toString();
-	const season: number = Number.parseInt(data.get("season")?.toString()??"");
-    const ep: number = Number.parseInt(data.get("ep")?.toString()??"");
-	const safe: boolean = (data.get("safe")??"") === "true" ? true : false
-	const hour: number = Number.parseInt(data.get("hour")?.toString()??"");
-	const minute: number = Number.parseInt(data.get("minute")?.toString()??"");
-	const second: number = Number.parseInt(data.get("second")?.toString()??"");
-	
+    const title: string = data.get("title")?.toString()??"";
+	const season: number = parseInt(data.get("season")?.toString()??"");
+    const ep: number = parseInt(data.get("ep")?.toString()??"");
+	const safe: boolean = (data.get("safe")??"") === "on";
+	const hour: number = parseInt(data.get("hour")?.toString()??"") || 0;
+	const minute: number = parseInt(data.get("minute")?.toString()??"") || 0;
+	const second: number = parseInt(data.get("second")?.toString()??"") || 0;
+
 	if(safe) {
 		await setSafe(title, season, ep);
 	} else {
