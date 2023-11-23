@@ -4,6 +4,7 @@
 
 * Find a way to allow x-www-form-urlencoded POST request to svelte.
 * Change data hosting location.
+* Validate request before submitting to database.
 
 ## Web app
 
