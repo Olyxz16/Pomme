@@ -26,9 +26,7 @@ export async function GET({ url }) : Promise<any> {
         timestamps?.forEach((ts: number) => {
             let { hour, minute, second} = fromTimestamp(ts);
             res += `
-                <p> ${hour} </p>
-                <p> ${minute} </p>
-                <p> ${second} </p>
+                <p> ${hour}h${minute}m${second} </p>
             `;
         });
     }
