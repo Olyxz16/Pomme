@@ -1,6 +1,6 @@
 {
     "name":"Pomme",
-    "manifest_version":3,
+    "manifest_version":2,
     "version":"0.1",
     "action": {
         "default_popup": "popup/main.html"
