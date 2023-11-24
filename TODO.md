@@ -15,4 +15,3 @@
 
 * [Fix] Create update button animation.
 * [Fix] Validate titles before updating values.
-* Fix tab navigating (title -> season -> ep -> button)
