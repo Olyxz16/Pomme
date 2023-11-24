@@ -13,5 +13,4 @@
 
 ## Browser Extension
 
-* [Fix] Create update button animation.
-* [Fix] Validate titles before updating values.
+* \-
