@@ -32,6 +32,10 @@ export async function setSafe(title: string, season: number, ep: number) {
 }
 export async function setUnsafe(title: string, season: number, ep: number, timestamp: number) {
   
+  if(isNaN(timestamp)) {
+    return;
+  }
+
   let { timestamps } = await getTimestamps(title, season, ep);
 
 

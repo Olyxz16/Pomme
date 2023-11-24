@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../public/style/style.css">
+        <script src="../deps/htmx.min.js"></script>
+        <title>Pomme</title>
+    </head>
+    <body>
+
+
+        <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
+        <div id="search-div">
+            <div id="search-bar-div">
+                <input type="text" id="search-bar" tabindex="1" class="search-params" name="title" list="title-list" hx-get="https://pomme.olyxz16.fr/api/rest/movies" hx-trigger="keydown" hx-target="#title-list" hx-swap="innerHTML" autocomplete="false"/>
+                <datalist id="title-list">
+                </datalist>
+                <input type="submit" value="Vérifier" id="search-button" tabindex="4" hx-get="https://pomme.olyxz16.fr/api/rest/search" hx-trigger="click" hx-target="#search-div" hx-swap="innerHTML" hx-include=".search-params"/>
+            </div>
+            <div id="numbers-div">
+                <label for="season"> Saison </label>
+                <input id="season" class="search-params" tabindex="2" type="number" name="season"/>
+                <label for="ep"> Episode </label>
+                <input id="episode" class="search-params" tabindex="3" type="number" name="ep"/>
+            </div>
+        </div>
+
+
+        <h3> Remplissez ces champs pour ajouter un avertissement </h3>
+        <div id="time-div">
+            <label for="hour"> Safe ? </label>
+            <input type="checkbox" name="safe" class="update-params">
+            <label for="hour"> H: </label>
+            <input type="number" class="time update-params" name="hour">
+            <label for="minute"> M: </label>
+            <input type="number" class="time update-params" name="minute">
+            <label for="second"> S: </label>
+            <input type="number" class="time update-params" name="second">
+            <input type="submit" id="update-button" value="Update" hx-post="https://pomme.olyxz16.fr/api/rest/add" hx-include=".search-params, .update-params" hx-target="#updated-text-div" hx-swap="innerHTML"></button>
+            <div id="updated-text-div">
+            </div>
+        </div>
+
+
+        <footer style="bottom: 1%; position: absolute; left:0; width: 100%; margin: 0; overflow: hidden;">
+            <div style="text-align: center;"> Alpha version | Made with 🍑 by <a href="https://github.com/Olyxz16"> Cédric Sazos </a> </div>
+        </footer>
+
+
+    </body>
+    
+</html>
