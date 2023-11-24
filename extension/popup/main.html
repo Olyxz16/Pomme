@@ -13,16 +13,16 @@
         <h3 id="description"> Cherchez un film ou une série pour savoir si elle est safe ! </h3>
         <div id="search-div">
             <div id="search-bar-div">
-                <input type="text" id="search-bar" class="search-params" name="title" list="title-list" hx-get="https://pomme.olyxz16.fr/api/rest/movies" hx-trigger="keydown" hx-target="#title-list" hx-swap="innerHTML" autocomplete="false"/>
+                <input type="text" id="search-bar" tabindex="1" class="search-params" name="title" list="title-list" hx-get="https://pomme.olyxz16.fr/api/rest/movies" hx-trigger="keydown" hx-target="#title-list" hx-swap="innerHTML" autocomplete="false"/>
                 <datalist id="title-list">
                 </datalist>
-                <input type="submit" value="Vérifier" id="search-button" hx-get="https://pomme.olyxz16.fr/api/rest/search" hx-trigger="click" hx-target="#search-div" hx-swap="innerHTML" hx-include=".search-params"/>
+                <input type="submit" value="Vérifier" id="search-button" tabindex="4" hx-get="https://pomme.olyxz16.fr/api/rest/search" hx-trigger="click" hx-target="#search-div" hx-swap="innerHTML" hx-include=".search-params"/>
             </div>
             <div id="numbers-div">
                 <label for="season"> Saison </label>
-                <input id="season" class="search-params" type="number" name="season"/>
+                <input id="season" class="search-params" tabindex="2" type="number" name="season"/>
                 <label for="ep"> Episode </label>
-                <input id="episode" class="search-params" type="number" name="ep"/>
+                <input id="episode" class="search-params" tabindex="3" type="number" name="ep"/>
             </div>
         </div>
 
