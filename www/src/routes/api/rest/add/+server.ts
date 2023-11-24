@@ -20,5 +20,8 @@ export async function POST({ request }) : Promise<any> {
 		await setUnsafe(title, season, ep, timestamp);
 	}
 
-	return new Response();
+	const response = `
+		<p> Mis à jour ! Merci ! </p>
+	`;
+	return new Response(response);
 }

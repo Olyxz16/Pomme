@@ -37,7 +37,9 @@
             <input type="number" class="time update-params" name="minute">
             <label for="second"> S: </label>
             <input type="number" class="time update-params" name="second">
-            <input type="submit" id="update-button" value="Update" hx-post="https://pomme.olyxz16.fr/api/rest/add" hx-include=".search-params, .update-params" hx-swap="none"></button>
+            <input type="submit" id="update-button" value="Update" hx-post="https://pomme.olyxz16.fr/api/rest/add" hx-include=".search-params, .update-params" hx-target="updated-text-div" hx-swap="innerHTML"></button>
+            <div id="updated-text-div">
+            </div>
         </div>
 
 
