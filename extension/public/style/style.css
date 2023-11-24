@@ -47,6 +47,14 @@ html {
     border-radius: 5px;
     margin-left: 10px;
 }
+#update-button {
+    width: 50px;
+    min-width: 50px;
+    height: 22px;
+    min-height: 22px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
 
 
 #search-bar, #season, #episode {
@@ -55,7 +63,7 @@ html {
     background-color: rgb(220, 221, 223, 0.5);
     box-shadow: inset 2px 2px 5px 1px rgba(120, 120, 120, 0.2);
 }
-#search-button {
+#search-button, #update-button {
     border-radius: 5px;
     border-color: rgb(0,0,0,0);
     background-color: rgb(220, 221, 223, 0.5);
