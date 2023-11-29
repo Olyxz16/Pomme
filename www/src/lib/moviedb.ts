@@ -16,6 +16,8 @@ export async function query(title: string): Promise<string[]> {
 }
 
 function parseJSON(json: any) {
-    let result = json.results.slice(0, MAX_QUERY_COUNT).map((movie: any) => movie.title);
+    let values: string[] = json.results.map((movie: { title: string; }) => movie.title);
+    let result = [...new Set(values)];
+    result = result.slice(0, MAX_QUERY_COUNT);
     return result;
 }
