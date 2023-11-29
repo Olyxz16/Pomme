@@ -12,7 +12,7 @@ export async function query(title: string): Promise<string[]> {
     return fetch(url, options)
     .then(res => res.json())
     .then(json => parseJSON(json))
-    .catch(err => console.error('error:' + err));
+    .catch(err => err);
 }
 
 function parseJSON(json: any) {
